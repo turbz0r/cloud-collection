@@ -1,0 +1,14 @@
+{
+    "producers": [
+        {
+            "id": 1,
+            "name": "Test",
+            "songsSources": ["url1", "url2", "url3"]
+        },
+        {
+            "id": 2,
+            "name": "Test2",
+            "songsSources": ["url1", "url2", "url3"]
+        }
+    ]
+}

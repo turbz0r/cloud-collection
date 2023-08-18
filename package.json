@@ -1,0 +1,22 @@
+{
+  "name": "cloud-collection",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/turbz0r/cloud-collection.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/turbz0r/cloud-collection/issues"
+  },
+  "homepage": "https://github.com/turbz0r/cloud-collection#readme",
+  "devDependencies": {
+    "json-server": "^0.17.3"
+  }
+}
