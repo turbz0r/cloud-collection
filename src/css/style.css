@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam&family=Ysabeau+Office&display=swap');
+
+/* font-family: 'Kalam', cursive;
+font-family: 'Ysabeau Office', sans-serif; */
+
 * {
     margin: 0;
     padding: 0;
@@ -40,13 +45,45 @@ body {
     padding-right: 20px;
 }
 
+/* header styling */
+
 header {
     min-width: 100%;
-    height: 70px;
+    height: 80px;
 }
 header > .container {
-    background-color: rgb(155, 119, 119);
+    background-color: rgb(179, 179, 179);
 }
+
+.header-content {
+    display: flex;
+    align-items: center;
+    min-height: 100%;
+    overflow: hidden;
+
+    margin: 0px 60px;
+}
+
+.header-content__wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-content__wrapper > i {
+    font-size: 72px;
+    color: rgba(255, 142, 37, 0.788);
+}
+
+.header-content__wrapper > h2 {
+    font-family: 'Kalam', cursive;
+    font-size: 42px;
+    color: rgb(107, 107, 107);
+    padding-right: 60px;
+}
+
+/* main-content section styling */
 
 .main {
     display: block;
@@ -59,7 +96,7 @@ main > .container {
 
     /*  */
 
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.75);
 
     -webkit-box-shadow: 0px 0px 105px 60px rgba(255, 255, 255, 0.6);
     -moz-box-shadow: 0px 0px 105px 60px rgba(255, 255, 255, 0.6);
@@ -71,10 +108,10 @@ main > .container {
     align-items: center;
     justify-content: center;
     position: sticky;
-    top: 10px;
+    top: 0px;
     width: 100%;
 
     margin: 0 auto;
 
-    padding-top: 10px;
+    padding-top: 20px;
 }
