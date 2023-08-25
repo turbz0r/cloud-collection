@@ -9,14 +9,13 @@ font-family: 'Ysabeau Office', sans-serif; */
 }
 html,
 body {
+    font-family: 'Ysabeau Office', sans-serif;
     min-height: 100%;
     height: 100%;
 }
 
 body {
-    background: url('/src/img/background-pic.jpg');
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    background: url('/src/img/background-pic.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -73,13 +72,13 @@ header > .container {
 
 .header-content__wrapper > i {
     font-size: 72px;
-    color: rgba(255, 142, 37, 0.788);
+    color: #ff8e25c9;
 }
 
 .header-content__wrapper > h2 {
     font-family: 'Kalam', cursive;
     font-size: 42px;
-    color: rgb(107, 107, 107);
+    color: #6b6b6b;
     padding-right: 60px;
 }
 
@@ -101,6 +100,48 @@ main > .container {
     -webkit-box-shadow: 0px 0px 105px 60px rgba(255, 255, 255, 0.6);
     -moz-box-shadow: 0px 0px 105px 60px rgba(255, 255, 255, 0.6);
     box-shadow: 0px 0px 105px 60px rgba(255, 255, 255, 0.6);
+}
+
+.main-navigation {
+    padding-top: 40px;
+}
+
+.main-navigation__wrapper {
+    margin: 20px 40px;
+}
+
+.navigation-list {
+    display: flex;
+    height: 65px;
+    align-items: center;
+    justify-content: center;
+}
+
+.navigation-option {
+    text-decoration: none;
+    color: #5a5a5a;
+    font-size: 1.7em;
+    font-weight: 600;
+    padding: 12px 40px;
+
+    transition: color 0.2s;
+}
+
+.nav-active {
+    background-color: #6b6b6b3f;
+    border-radius: 7px;
+}
+
+/* TODO */
+
+.navigation-option:hover {
+    color: #f79437c9;
+}
+
+.separator {
+    min-height: 100%;
+    margin: 0 10px;
+    border-right: 1px solid black;
 }
 
 .test-mid {
