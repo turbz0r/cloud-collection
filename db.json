@@ -2,13 +2,52 @@
     "producers": [
         {
             "id": 1,
-            "name": "Test",
-            "songsSources": ["url1", "url2", "url3"]
+            "name": "Skeler",
+            "country": "Australia",
+            "genres": ["Wave", "HardWave", "Phonk"],
+            "songsSources": ["url1", "url2", "url3"],
+            "setsSources": ["url1", "url2", "url3"]
         },
         {
             "id": 2,
-            "name": "Test2",
-            "songsSources": ["url1", "url2", "url3"]
+            "name": "Ytho",
+            "country": "Australia",
+            "genres": ["Wave", "HardWave", "D'n'B"],
+            "songsSources": ["url1", "url2", "url3"],
+            "setsSources": ["url1", "url2", "url3"]
+        },
+        {
+            "id": 3,
+            "name": "hiræth",
+            "country": "unknown",
+            "genres": ["Wave", "Ambient", "D'n'B", "Electronic"],
+            "songsSources": ["url1", "url2", "url3"],
+            "setsSources": ["url1", "url2", "url3"]
+        },
+        {
+            "id": 4,
+            "name": "Willix",
+            "country": "France",
+            "genres": ["Wave", "Phonk", "Electronic"],
+            "songsSources": ["url1", "url2", "url3"],
+            "setsSources": []
+        },
+        {
+            "id": 5,
+            "name": "Sibewest",
+            "country": "unknown",
+            "genres": ["Wave", "Sad Phonk", "Electronic", "Techno", "Ambient"],
+            "songsSources": ["url1", "url2", "url3"],
+            "setsSources": []
+        },
+        {
+            "id": 6,
+            "name": "Juche",
+            "country": "Australia",
+            "genres": ["Wave", "HardWave", "Neo"],
+            "songsSources": ["url1", "url2", "url3"],
+            "setsSources": []
         }
-    ]
+    ],
+    "latest": []
 }
