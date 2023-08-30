@@ -164,9 +164,6 @@ main > .container {
     display: none;
     margin-top: 50px;
 }
-.section-active {
-    display: block;
-}
 
 .creators-section {
     width: 100%;
@@ -179,7 +176,6 @@ main > .container {
     font-size: 2.2em;
     font-weight: 600;
     color: #4d4d4d;
-    margin: 0 auto;
 }
 
 .creators-section > .separator {
@@ -238,4 +234,100 @@ main > .container {
 
 .creator-panel__details > a:hover {
     text-decoration: underline;
+}
+
+.choose-creator {
+    display: none;
+    margin-top: 50px;
+}
+
+.artist-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.artist-list > h1 {
+    font-size: 2.2em;
+    font-weight: 600;
+    color: #4d4d4d;
+}
+
+.artist-list > .separator {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.288);
+}
+
+.artist-list__slider {
+    margin-top: 10px;
+    padding-bottom: 10px;
+    height: 180px;
+    max-width: 70%;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    user-select: none;
+}
+
+.artist-list__slider::-webkit-scrollbar {
+    height: 10px;
+    width: 4px;
+    background: #6b6b6b7c;
+    border-radius: 40px;
+}
+.artist-list__slider::-webkit-scrollbar-thumb:horizontal {
+    background: #4d4d4d;
+    border-radius: 40px;
+}
+
+.artist-list__items {
+    list-style: none;
+    height: 100%;
+    display: flex;
+    gap: 2em;
+    align-items: center;
+}
+
+.artist-list__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.artist-list__item > img {
+    max-width: 128px;
+    border-radius: 50%;
+}
+.artist-list__item > p {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.artist-music {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+.artist-music > iframe {
+    margin-bottom: 30px;
+}
+
+.latest-liked {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+/* TODO  */
+.latest-liked > .separator {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.288);
+    margin-bottom: 40px;
+}
+
+/* Activate section visibility*/
+.section-active {
+    display: block;
 }
