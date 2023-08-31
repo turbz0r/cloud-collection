@@ -1,23 +1,15 @@
 window.addEventListener('DOMContentLoaded', (event) => {
-    const dataBtn = document.querySelector('.data-btn');
+    const getResource = async (url) => {
+        const res = await fetch(url);
 
-    dataBtn.addEventListener('click', (event) => {
-        fetch('http://localhost:3000/producers')
-            .then((data) => data.json())
-            .then((result) => {
-                for (res of result) {
-                    res.songsSources.forEach((item) => {
-                        dataBtn.insertAdjacentHTML('afterend', `<div>${item}</div>`);
-                    });
-                }
-            });
+        if (!res.ok) {
+            throw new Error(`Error ocurred.\n${url} could not fetch data.\n Status: ${res.status}`);
+        }
+
+        return await res.json();
+    };
+
+    getResource('http://localhost:3000/latest').then((data) => {
+        document.querySelector('.latest-liked').insertAdjacentHTML('beforeend', data[0]);
     });
-
-    fetch('http://localhost:3000/producers')
-        .then((data) => data.json())
-        .then((result) => {
-            for (res of result) {
-                dataBtn.insertAdjacentHTML('beforebegin', `${res.songsSources.length} <br>`);
-            }
-        });
 });
