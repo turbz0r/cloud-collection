@@ -14,7 +14,7 @@
         <title>My SoundCloud Collection</title>
     </head>
     <body>
-        <div class="main">
+        <div class="wrapper">
             <header>
                 <div class="container">
                     <div class="header-content">
@@ -30,21 +30,23 @@
                     <div class="main-navigation">
                         <div class="main-navigation__wrapper">
                             <nav class="navigation-list">
-                                <a data-option="creators-all" href="" class="navigation-option">All Creators</a>
+                                <a data-option="creators-all" href="" class="navigation-option nav-active"
+                                    >All Creators</a
+                                >
                                 <div class="separator"></div>
                                 <a data-option="creators-list" href="" class="navigation-option">Choose music</a>
                                 <div class="separator"></div>
-                                <a data-option="likes" href="" class="navigation-option nav-active">My latest liked</a>
+                                <a data-option="likes" href="" class="navigation-option">My latest liked</a>
                             </nav>
                         </div>
                     </div>
 
-                    <div class="creators-all">
+                    <div class="main-section creators-all section-active">
                         <div class="creators-section">
                             <h1>Creators description</h1>
                             <div class="separator"></div>
                             <div class="creators-panels__wrapper">
-                                <div class="creator-panel">
+                                <!-- <div class="creator-panel">
                                     <div class="creator-panel__img"><img src="src/img/avatar-skeler.jpg" alt="" /></div>
                                     <div class="creator-panel__details">
                                         <p>Skeler</p>
@@ -56,51 +58,12 @@
                                         </ul>
                                         <a href="">Page on SoundCloud</a>
                                     </div>
-                                </div>
-                                <div class="creator-panel">
-                                    <div class="creator-panel__img"><img src="src/img/avatar-skeler.jpg" alt="" /></div>
-                                    <div class="creator-panel__details">
-                                        <p>Skeler</p>
-                                        <ul>
-                                            <li>Country: Australia</li>
-                                            <li>Genres: Wave, HardWave, Phonk, D'n'B</li>
-                                            <li>Total tracks: ${num}</li>
-                                            <li>Full sets: ${num}</li>
-                                        </ul>
-                                        <a href="">Page on SoundCloud</a>
-                                    </div>
-                                </div>
-                                <div class="creator-panel">
-                                    <div class="creator-panel__img"><img src="src/img/avatar-skeler.jpg" alt="" /></div>
-                                    <div class="creator-panel__details">
-                                        <p>Skeler</p>
-                                        <ul>
-                                            <li>Country: Australia</li>
-                                            <li>Genres: Wave, HardWave, Phonk, D'n'B</li>
-                                            <li>Total tracks: ${num}</li>
-                                            <li>Full sets: ${num}</li>
-                                        </ul>
-                                        <a href="">Page on SoundCloud</a>
-                                    </div>
-                                </div>
-                                <div class="creator-panel">
-                                    <div class="creator-panel__img"><img src="src/img/avatar-skeler.jpg" alt="" /></div>
-                                    <div class="creator-panel__details">
-                                        <p>Skeler</p>
-                                        <ul>
-                                            <li>Country: Australia</li>
-                                            <li>Genres: Wave, HardWave, Phonk, D'n'B</li>
-                                            <li>Total tracks: ${num}</li>
-                                            <li>Full sets: ${num}</li>
-                                        </ul>
-                                        <a href="">Page on SoundCloud</a>
-                                    </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
 
-                    <div class="choose-creator">
+                    <div class="main-section choose-creator">
                         <div class="artist-list">
                             <h1>Pick a producer</h1>
                             <div class="artist-list__slider">
@@ -144,14 +107,23 @@
                         <div class="artist-music"></div>
                     </div>
 
-                    <div class="latest-liked section-active">
+                    <div class="main-section latest-liked">
                         <!-- TODO list accuracy warning -->
+                        <p>might not be as accurate</p>
                         <div class="separator"></div>
-                        <!-- TODO js main functionality -->
-                        <!-- TODO manage database -->
                     </div>
                 </div>
             </main>
+            <footer>
+                <div class="container">
+                    <div class="footer-credits">
+                        <p>Visit my page on SoundCloud:</p>
+                        <a href="https://soundcloud.com/turb-zor" target="_blank"
+                            ><img src="src/img/avatar-my.jpg" alt=""
+                        /></a>
+                    </div>
+                </div>
+            </footer>
         </div>
 
         <div class="glass-cover"></div>

@@ -4,49 +4,61 @@
             "id": 1,
             "name": "Skeler",
             "country": "Australia",
+            "avatarSrc": "src/img/avatar-skeler.jpg",
             "genres": ["Wave", "HardWave", "Phonk"],
             "songsSources": ["url1", "url2", "url3"],
-            "setsSources": ["url1", "url2", "url3"]
+            "setsSources": ["url1", "url2", "url3"],
+            "pageLink": "https://soundcloud.com/skelermusic"
         },
         {
             "id": 2,
             "name": "Ytho",
             "country": "Australia",
+            "avatarSrc": "src/img/avatar-ytho.jpg",
             "genres": ["Wave", "HardWave", "D'n'B"],
             "songsSources": ["url1", "url2", "url3"],
-            "setsSources": ["url1", "url2", "url3"]
+            "setsSources": ["url1", "url2", "url3"],
+            "pageLink": "https://soundcloud.com/perth_ytho"
         },
         {
             "id": 3,
             "name": "hiræth",
             "country": "unknown",
+            "avatarSrc": "src/img/avatar-hiraeth.jpg",
             "genres": ["Wave", "Ambient", "D'n'B", "Electronic"],
             "songsSources": ["url1", "url2", "url3"],
-            "setsSources": ["url1", "url2", "url3"]
+            "setsSources": ["url1", "url2", "url3"],
+            "pageLink": "https://soundcloud.com/imhiraeth"
         },
         {
             "id": 4,
             "name": "Willix",
             "country": "France",
+            "avatarSrc": "src/img/avatar-willix.jpg",
             "genres": ["Wave", "Phonk", "Electronic"],
             "songsSources": ["url1", "url2", "url3"],
-            "setsSources": []
+            "setsSources": [],
+            "pageLink": "https://soundcloud.com/willixbeats"
         },
         {
             "id": 5,
             "name": "Sibewest",
             "country": "unknown",
+            "avatarSrc": "src/img/avatar-sibewest.jpg",
             "genres": ["Wave", "Sad Phonk", "Electronic", "Techno", "Ambient"],
             "songsSources": ["url1", "url2", "url3"],
-            "setsSources": []
+            "setsSources": [],
+            "pageLink": "https://soundcloud.com/sibewest"
         },
         {
             "id": 6,
             "name": "Juche",
             "country": "Australia",
+            "avatarSrc": "src/img/avatar-juche.jpg",
             "genres": ["Wave", "HardWave", "Neo"],
             "songsSources": ["url1", "url2", "url3"],
-            "setsSources": []
+            "setsSources": [],
+            "pageLink": "https://soundcloud.com/erejuche"
         }
     ],
     "latest": [
