@@ -113,6 +113,7 @@ main > .container {
     min-height: 100%;
     margin-bottom: 60px;
     /*  */
+    /* thing what causes container resize on whole page is srollbar appearance 04.09 */
 
     background-color: rgba(255, 255, 255, 0.75);
 
@@ -338,12 +339,20 @@ main > .container {
     margin: 0 auto;
     margin-top: 40px;
 }
-/* TODO  */
+
+.latest-liked > p {
+    text-align: center;
+    font-size: 1.1em;
+}
+
 .latest-liked > .separator {
     width: 50%;
     margin: 0 auto;
     margin-top: 5px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.288);
+    margin-bottom: 40px;
+}
+.latest-liked > iframe {
     margin-bottom: 40px;
 }
 

@@ -45,7 +45,7 @@
             "name": "Sibewest",
             "country": "unknown",
             "avatarSrc": "src/img/avatar-sibewest.jpg",
-            "genres": ["Wave", "Sad Phonk", "Electronic", "Techno", "Ambient"],
+            "genres": ["Wave", "Sad Phonk", "Electronic", "Techno", "Trance"],
             "songsSources": ["url1", "url2", "url3"],
             "setsSources": [],
             "pageLink": "https://soundcloud.com/sibewest"
@@ -62,6 +62,19 @@
         }
     ],
     "latest": [
-        "<iframe width=\"100%\" height=\"166\" scrolling=\"no\" frameborder=\"no\" allow=\"autoplay\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1593004833&color=%234c6c94&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true\"></iframe>"
+        "<iframe width=\"100%\" height=\"166\" scrolling=\"no\" frameborder=\"no\" allow=\"autoplay\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1443869050&color=%23616c64&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true\"></iframe>",
+        "<iframe width=\"100%\" height=\"166\" scrolling=\"no\" frameborder=\"no\" allow=\"autoplay\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1525610530&color=%23394888&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true\"></iframe>",
+        "<iframe width=\"100%\" height=\"166\" scrolling=\"no\" frameborder=\"no\" allow=\"autoplay\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1431575848&color=%23144694&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true\"></iframe>",
+        "<iframe width=\"100%\" height=\"166\" scrolling=\"no\" frameborder=\"no\" allow=\"autoplay\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1593004833&color=%234c6c94&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true\"></iframe>",
+        "<iframe width=\"100%\" height=\"166\" scrolling=\"no\" frameborder=\"no\" allow=\"autoplay\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1606980171&color=%23444444&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true\"></iframe>",
+        "<iframe width=\"100%\" height=\"166\" scrolling=\"no\" frameborder=\"no\" allow=\"autoplay\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1605220089&color=%23b4acd4&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true\"></iframe>",
+        "<iframe width=\"100%\" height=\"166\" scrolling=\"no\" frameborder=\"no\" allow=\"autoplay\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1602671556&color=%231a1a1e&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true\"></iframe>",
+        "<iframe width=\"100%\" height=\"166\" scrolling=\"no\" frameborder=\"no\" allow=\"autoplay\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1525584367&color=%236880b0&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true\"></iframe>",
+        "<iframe width=\"100%\" height=\"166\" scrolling=\"no\" frameborder=\"no\" allow=\"autoplay\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1097719708&color=%238484a4&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true\"></iframe>",
+        "<iframe width=\"100%\" height=\"166\" scrolling=\"no\" frameborder=\"no\" allow=\"autoplay\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1557632962&color=%23b1c4d1&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true\"></iframe>",
+        "<iframe width=\"100%\" height=\"166\" scrolling=\"no\" frameborder=\"no\" allow=\"autoplay\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1586544611&color=%23212121&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true\"></iframe>",
+        "<iframe width=\"100%\" height=\"166\" scrolling=\"no\" frameborder=\"no\" allow=\"autoplay\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1572423031&color=%233c6474&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true\"></iframe>",
+        "<iframe width=\"100%\" height=\"166\" scrolling=\"no\" frameborder=\"no\" allow=\"autoplay\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/320422158&color=%239880b2&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true\"></iframe>",
+        "<iframe width=\"100%\" height=\"166\" scrolling=\"no\" frameborder=\"no\" allow=\"autoplay\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/465187356&color=%23a4949c&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true\"></iframe>"
     ]
 }

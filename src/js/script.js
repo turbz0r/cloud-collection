@@ -11,10 +11,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
         return await res.json();
     };
 
-    getResource('http://localhost:3000/latest').then((data) => {
-        document.querySelector('.latest-liked').insertAdjacentHTML('beforeend', data[0]);
-    });
-
     // navigation-contentSections synergy
 
     const sectionsList = document.querySelectorAll('.main-section'),
@@ -65,6 +61,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         }
 
         appendPanel() {
+            // loading animation delete
             const panel = document.createElement('div');
             panel.classList.add('creator-panel');
             panel.innerHTML = `<div class="creator-panel__img"><img src="${this.itemImage}" alt="" /></div>
@@ -86,6 +83,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         if (creatorsButton.getAttribute('active') === 'true') {
             return false;
         } else {
+            // loading animation start
             getResource('http://localhost:3000/producers')
                 .then((data) => {
                     creatorsButton.setAttribute('active', 'true');
@@ -102,7 +100,37 @@ window.addEventListener('DOMContentLoaded', (event) => {
                     });
                 })
                 .catch((err) => {
+                    // loading animation delete
                     creatorsButton.setAttribute('active', 'false');
+                    panelsWrapper.innerHTML = `<p style="margin: 0 auto;color: red;text-align: center;">Something went wrong.</br> Please, try again later.</p>`;
+                });
+        }
+    });
+
+    //latest liked functionality
+
+    const latestLikedButton = document.querySelector('[data-option = "likes"]'),
+        latestLikedContainer = document.querySelector('.latest-liked');
+
+    latestLikedButton.addEventListener('click', (event) => {
+        if (latestLikedButton.getAttribute('active') === 'true') {
+            return false;
+        } else {
+            // loading animation start
+            getResource('http://localhost:3000/latest')
+                .then((data) => {
+                    latestLikedButton.setAttribute('active', 'true');
+                    data.forEach((item) => {
+                        latestLikedContainer.insertAdjacentHTML('beforeend', item);
+                    });
+                })
+                .catch((err) => {
+                    // loading animation delete
+                    latestLikedButton.setAttribute('active', 'false');
+                    latestLikedContainer.insertAdjacentHTML(
+                        'beforeend',
+                        `<p style="margin: 0 auto;color: red;text-align: center;">Something went wrong.</br> Please, try again later.</p>`
+                    );
                 });
         }
     });
