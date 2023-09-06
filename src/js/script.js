@@ -87,6 +87,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             getResource('http://localhost:3000/producers')
                 .then((data) => {
                     creatorsButton.setAttribute('active', 'true');
+                    panelsWrapper.innerHTML = '';
                     data.forEach((item) => {
                         new CreatorCard(
                             item.avatarSrc,
@@ -112,6 +113,19 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const latestLikedButton = document.querySelector('[data-option = "likes"]'),
         latestLikedContainer = document.querySelector('.latest-liked');
 
+    let totalLikedLoaded = 0;
+    function loadFrames(numFrames, collection, container) {
+        let i = 0;
+        while (i < numFrames) {
+            if (totalLikedLoaded === collection.length) {
+                break;
+            }
+            container.insertAdjacentHTML('beforeend', collection[totalLikedLoaded]);
+            i++;
+            totalLikedLoaded++;
+        }
+    }
+
     latestLikedButton.addEventListener('click', (event) => {
         if (latestLikedButton.getAttribute('active') === 'true') {
             return false;
@@ -120,9 +134,15 @@ window.addEventListener('DOMContentLoaded', (event) => {
             getResource('http://localhost:3000/latest')
                 .then((data) => {
                     latestLikedButton.setAttribute('active', 'true');
-                    data.forEach((item) => {
-                        latestLikedContainer.insertAdjacentHTML('beforeend', item);
+                    loadFrames(6, data, latestLikedContainer);
+                    window.addEventListener('scroll', (event) => {
+                        if (window.scrollY + window.innerHeight === document.documentElement.scrollHeight) {
+                            loadFrames(6, data, latestLikedContainer);
+                        }
                     });
+                    // data.forEach((item) => {
+                    //     latestLikedContainer.insertAdjacentHTML('beforeend', item);
+                    // });
                 })
                 .catch((err) => {
                     // loading animation delete
