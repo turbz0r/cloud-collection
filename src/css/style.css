@@ -124,6 +124,7 @@ header > .container {
 
 /* main-content section styling */
 main > .container {
+    position: relative;
     min-height: 100%;
     margin-bottom: 60px;
     /*  */
@@ -333,10 +334,15 @@ main > .container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    cursor: pointer;
 }
 .artist-list__item > img {
     max-width: 128px;
     border-radius: 50%;
+    transition: transform 0.3s;
+}
+.artist-list__item > img:hover {
+    transform: scale(0.9);
 }
 .artist-list__item > p {
     font-size: 1em;
@@ -377,6 +383,7 @@ main > .container {
 
 /* little footer styling */
 footer > .container {
+    position: relative;
     background-color: rgb(179, 179, 179);
 
     border-bottom-left-radius: 5px;
@@ -400,10 +407,10 @@ footer > .container {
 /* scroll to top button */
 
 .scrolltop {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 15px 0px;
+    position: fixed;
+    display: block;
+    left: 10px;
+    bottom: 70px;
 }
 .scrolltop > div {
     width: 40px;

@@ -47,10 +47,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
     // Creators panels
 
     const creatorsButton = document.querySelector('[data-option = "creators-all"]'),
-        panelsWrapper = document.querySelector('.creators-panels__wrapper');
+        panelsWrapper = document.querySelector('.creators-panels__wrapper'),
+        minicardsList = document.querySelector('.artist-list__items');
 
     class CreatorCard {
-        constructor(itemImage, itemName, itemCountry, itemGenres, itemTracks, itemSets, itemSource) {
+        constructor(itemId, itemImage, itemName, itemCountry, itemGenres, itemTracks, itemSets, itemSource) {
+            this.itemId = itemId;
             this.itemImage = itemImage;
             this.itemName = itemName;
             this.itemCountry = itemCountry;
@@ -77,6 +79,30 @@ window.addEventListener('DOMContentLoaded', (event) => {
             </div>`;
             panelsWrapper.append(panel);
         }
+
+        appendMinicard() {
+            const artistMinicard = document.createElement('li');
+            artistMinicard.classList.add('artist-list__item');
+            artistMinicard.setAttribute('data-producer-id', this.itemId);
+            artistMinicard.innerHTML = `<img src="${this.itemImage}" alt="" />
+            <p>${this.itemName}</p>`;
+            minicardsList.append(artistMinicard);
+
+            artistMinicard.addEventListener('click', (event) => {
+                if (
+                    artistMinicard.getAttribute('data-producer-id') ===
+                    songsContainer.getAttribute('data-active-producer-id')
+                ) {
+                    return false;
+                } else {
+                    songsContainer.setAttribute('data-active-producer-id', this.itemId);
+                    songsContainer.innerHTML = '';
+                    this.itemTracks.forEach((item) => {
+                        songsContainer.insertAdjacentHTML('beforeend', item);
+                    });
+                }
+            });
+        }
     }
 
     creatorsButton.addEventListener('click', (event) => {
@@ -90,6 +116,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                     panelsWrapper.innerHTML = '';
                     data.forEach((item) => {
                         new CreatorCard(
+                            item.id,
                             item.avatarSrc,
                             item.name,
                             item.country,
@@ -104,6 +131,37 @@ window.addEventListener('DOMContentLoaded', (event) => {
                     // loading animation delete
                     creatorsButton.setAttribute('active', 'false');
                     panelsWrapper.innerHTML = `<p style="margin: 0 auto;color: red;text-align: center;">Something went wrong.</br> Please, try again later.</p>`;
+                });
+        }
+    });
+
+    //Choose music -> creator section functionality
+
+    const creatorsListButton = document.querySelector('[data-option = "creators-list"]'),
+        songsContainer = document.querySelector('.artist-music');
+
+    creatorsListButton.addEventListener('click', (event) => {
+        if (creatorsListButton.getAttribute('active') === 'true') {
+            return false;
+        } else {
+            getResource('http://localhost:3000/producers')
+                .then((data) => {
+                    creatorsListButton.setAttribute('active', 'true');
+                    data.forEach((item) => {
+                        new CreatorCard(
+                            item.id,
+                            item.avatarSrc,
+                            item.name,
+                            item.country,
+                            item.genres,
+                            item.songsSources,
+                            item.setsSources,
+                            item.pageLink
+                        ).appendMinicard();
+                    });
+                })
+                .catch((err) => {
+                    songsContainer.innerHTML = `<p style="margin: 0 auto;color: red;text-align: center;">Something went wrong.</br> Please, try again later.</p>`;
                 });
         }
     });
