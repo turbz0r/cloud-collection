@@ -51,19 +51,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
         minicardsList = document.querySelector('.artist-list__items');
 
     class CreatorCard {
-        constructor(itemId, itemImage, itemName, itemCountry, itemGenres, itemTracks, itemSets, itemSource) {
+        constructor(itemId, itemImage, itemName, itemCountry, itemGenres, itemTracks, itemSource) {
             this.itemId = itemId;
             this.itemImage = itemImage;
             this.itemName = itemName;
             this.itemCountry = itemCountry;
             this.itemGenres = itemGenres;
             this.itemTracks = itemTracks;
-            this.itemSets = itemSets;
             this.itemSource = itemSource;
         }
 
         appendPanel() {
-            // loading animation delete
             const panel = document.createElement('div');
             panel.classList.add('creator-panel');
             panel.innerHTML = `<div class="creator-panel__img"><img src="${this.itemImage}" alt="" /></div>
@@ -73,7 +71,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
                     <li>Country: ${this.itemCountry}</li>
                     <li>Genres: ${this.itemGenres.join(',')}</li>
                     <li>Total tracks: ${this.itemTracks.length}</li>
-                    <li>Full sets: ${this.itemSets.length}</li>
                 </ul>
                 <a href="${this.itemSource}" target="_blank">Page on SoundCloud</a>
             </div>`;
@@ -100,6 +97,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
                     this.itemTracks.forEach((item) => {
                         songsContainer.insertAdjacentHTML('beforeend', item);
                     });
+
+                    // --rework--
+                    // loadFrames(6, this.itemTracks, songsContainer);
+                    // window.addEventListener('scroll', (event) => {
+                    //     if (window.scrollY + window.innerHeight === document.documentElement.scrollHeight) {
+                    //         loadFrames(6, this.itemTracks, songsContainer);
+                    //     }
+                    // });
                 }
             });
         }
@@ -109,7 +114,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
         if (creatorsButton.getAttribute('active') === 'true') {
             return false;
         } else {
-            // loading animation start
+            //loading animation start
+            panelsWrapper.insertAdjacentHTML('afterbegin', `<div id="loading"><div></div></div>`);
             getResource('http://localhost:3000/producers')
                 .then((data) => {
                     creatorsButton.setAttribute('active', 'true');
@@ -122,13 +128,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
                             item.country,
                             item.genres,
                             item.songsSources,
-                            item.setsSources,
                             item.pageLink
                         ).appendPanel();
                     });
                 })
                 .catch((err) => {
                     // loading animation delete
+                    panelsWrapper.innerHTML = '';
                     creatorsButton.setAttribute('active', 'false');
                     panelsWrapper.innerHTML = `<p style="margin: 0 auto;color: red;text-align: center;">Something went wrong.</br> Please, try again later.</p>`;
                 });
@@ -144,6 +150,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         if (creatorsListButton.getAttribute('active') === 'true') {
             return false;
         } else {
+            //loading circle
             getResource('http://localhost:3000/producers')
                 .then((data) => {
                     creatorsListButton.setAttribute('active', 'true');
@@ -155,7 +162,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
                             item.country,
                             item.genres,
                             item.songsSources,
-                            item.setsSources,
                             item.pageLink
                         ).appendMinicard();
                     });
@@ -171,16 +177,16 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const latestLikedButton = document.querySelector('[data-option = "likes"]'),
         latestLikedContainer = document.querySelector('.latest-liked');
 
-    let totalLikedLoaded = 0;
+    let totalSongsLoaded = 0;
     function loadFrames(numFrames, collection, container) {
         let i = 0;
         while (i < numFrames) {
-            if (totalLikedLoaded === collection.length) {
+            if (totalSongsLoaded === collection.length) {
                 break;
             }
-            container.insertAdjacentHTML('beforeend', collection[totalLikedLoaded]);
+            container.insertAdjacentHTML('beforeend', collection[totalSongsLoaded]);
             i++;
-            totalLikedLoaded++;
+            totalSongsLoaded++;
         }
     }
 

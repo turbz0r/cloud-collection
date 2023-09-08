@@ -222,7 +222,7 @@ main > .container {
 
 .creator-panel {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
 
     flex-basis: 50%;
     flex-grow: 1;
@@ -232,6 +232,7 @@ main > .container {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-right: 50px;
 }
 .creator-panel__img > img {
     max-width: 128px;
@@ -428,6 +429,33 @@ footer > .container {
 }
 .scrolltop i {
     color: #ff8e25c9;
+}
+
+/* loading circle */
+
+#loading {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#loading > div {
+    width: 2rem;
+    height: 2rem;
+    border: 5px solid grey;
+    border-top: 6px solid #f79437;
+    border-radius: 100%;
+    display: inline-block;
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* Activate section visibility*/
