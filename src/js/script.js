@@ -115,6 +115,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             return false;
         } else {
             //loading animation start
+            panelsWrapper.innerHTML = '';
             panelsWrapper.insertAdjacentHTML('afterbegin', `<div id="loading"><div></div></div>`);
             getResource('http://localhost:3000/producers')
                 .then((data) => {
@@ -151,8 +152,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
             return false;
         } else {
             //loading circle
+            minicardsList.insertAdjacentHTML('afterbegin', `<div id="loading"><div></div></div>`);
             getResource('http://localhost:3000/producers')
                 .then((data) => {
+                    minicardsList.innerHTML = '';
                     creatorsListButton.setAttribute('active', 'true');
                     data.forEach((item) => {
                         new CreatorCard(
@@ -167,6 +170,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                     });
                 })
                 .catch((err) => {
+                    minicardsList.innerHTML = '';
                     songsContainer.innerHTML = `<p style="margin: 0 auto;color: red;text-align: center;">Something went wrong.</br> Please, try again later.</p>`;
                 });
         }
@@ -195,8 +199,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
             return false;
         } else {
             // loading animation start
+            latestLikedContainer.insertAdjacentHTML('afterend', `<div id="loading"><div></div></div>`);
             getResource('http://localhost:3000/latest')
                 .then((data) => {
+                    document.querySelector('#loading').remove();
                     latestLikedButton.setAttribute('active', 'true');
                     loadFrames(6, data, latestLikedContainer);
                     window.addEventListener('scroll', (event) => {
@@ -210,6 +216,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 })
                 .catch((err) => {
                     // loading animation delete
+                    document.querySelector('#loading').remove();
                     latestLikedButton.setAttribute('active', 'false');
                     latestLikedContainer.insertAdjacentHTML(
                         'beforeend',
