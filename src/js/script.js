@@ -225,4 +225,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 });
         }
     });
+
+    //initializing click on latest liked to show content after page load
+    latestLikedButton.click();
 });
