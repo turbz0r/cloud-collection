@@ -94,17 +94,20 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 } else {
                     songsContainer.setAttribute('data-active-producer-id', this.itemId);
                     songsContainer.innerHTML = '';
-                    this.itemTracks.forEach((item) => {
-                        songsContainer.insertAdjacentHTML('beforeend', item);
-                    });
 
-                    // --rework--
-                    // loadFrames(6, this.itemTracks, songsContainer);
-                    // window.addEventListener('scroll', (event) => {
-                    //     if (window.scrollY + window.innerHeight === document.documentElement.scrollHeight) {
-                    //         loadFrames(6, this.itemTracks, songsContainer);
-                    //     }
+                    //
+
+                    // this.itemTracks.forEach((item) => {
+                    //     songsContainer.insertAdjacentHTML('beforeend', item);
                     // });
+
+                    const scrollLoad = loadFrames(6, this.itemTracks, songsContainer);
+                    scrollLoad();
+                    window.addEventListener('scroll', (event) => {
+                        if (window.scrollY + window.innerHeight === document.documentElement.scrollHeight) {
+                            scrollLoad();
+                        }
+                    });
                 }
             });
         }
@@ -181,17 +184,19 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const latestLikedButton = document.querySelector('[data-option = "likes"]'),
         latestLikedContainer = document.querySelector('.latest-liked');
 
-    let totalSongsLoaded = 0;
     function loadFrames(numFrames, collection, container) {
-        let i = 0;
-        while (i < numFrames) {
-            if (totalSongsLoaded === collection.length) {
-                break;
+        let totalSongsLoaded = 0;
+        return () => {
+            let i = 0;
+            while (i < numFrames) {
+                if (totalSongsLoaded === collection.length) {
+                    break;
+                }
+                container.insertAdjacentHTML('beforeend', collection[totalSongsLoaded]);
+                i++;
+                totalSongsLoaded++;
             }
-            container.insertAdjacentHTML('beforeend', collection[totalSongsLoaded]);
-            i++;
-            totalSongsLoaded++;
-        }
+        };
     }
 
     latestLikedButton.addEventListener('click', (event) => {
@@ -204,10 +209,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 .then((data) => {
                     document.querySelector('#loading').remove();
                     latestLikedButton.setAttribute('active', 'true');
-                    loadFrames(6, data, latestLikedContainer);
+
+                    const scrollLoad = loadFrames(6, data, latestLikedContainer);
+                    scrollLoad();
                     window.addEventListener('scroll', (event) => {
                         if (window.scrollY + window.innerHeight === document.documentElement.scrollHeight) {
-                            loadFrames(6, data, latestLikedContainer);
+                            scrollLoad();
                         }
                     });
                     // data.forEach((item) => {
